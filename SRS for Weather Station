@@ -1,4 +1,14 @@
 Software Requirement Specification for Wlderness Weather Station:
 
 Preface:
+This document serves as a software requirement specification for Wilderness Weather Station. The version number of this document is 1.
+This document may be subject to change if the requirements of the project is altered or updated. This document is intended for software
+developers and customer/user.
+
+Introduction:
+The Wilderness Weather Station is intended to serve as a weather forecasting system that includes reading data regarding changes in
+weather and generating report based on the data. The Wilderness Weather Station has three seperate systems that work together. The Weather 
+Station System collects weather related data. The Data Management and Archive System analyzes and archives the data. The Station Maintenance
+System checks the health of the systems and generate report based on system issues.
+
 
