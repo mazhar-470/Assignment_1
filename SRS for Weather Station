@@ -12,12 +12,22 @@ Station System collects weather related data. The Data Management and Archive Sy
 System checks the health of the systems and generate report based on system issues.
 
 User Requirements Definition:
-The Wilderness Weather Station consists of three separate systems that work collectively to serve as a Weather Forecasting System.
-The three systems are:
-1. The Weather Station System: This is responsible for collecting weather data, carrying out some initial data processing, and transmitting 
-   it to the data management system.
-2. The Data Management and Archiving System: This system collects the data from all of the wilderness weather stations, carries out data 
-   processing and analysis, and archives the data in a form that can be retrieved by other systems, such as weather forecasting systems.
-3. The Station Maintenance System: This system can communicate by satellite with all wilderness weather stations to monitor the health of 
-   these systems and provide reports of problems. It can update the embedded software in these systems. In the event of system problems, 
-   this system can also be used to remotely control a wilderness weather system.
+     Functional Requirements:
+     The Wilderness Weather Station consists of three separate systems that work collectively to serve as a Weather Forecasting System.
+     The three systems are:
+     1. The Weather Station System: This is responsible for collecting weather data, carrying out some initial data processing, and 
+     transmitting  it to the data management system. The Weather Stations are battery powered and has no external cables attached to them.
+     2. The Data Management and Archiving System: This system collects the data from all of the wilderness weather stations, carries out 
+     data processing and analysis, and archives the data in a form that can be retrieved by other systems, such as weather forecasting
+     systems.
+     3. The Station Maintenance System: This system can communicate by satellite with all wilderness weather stations to monitor the health  
+     of these systems and provide reports of problems. It can update the embedded software in these systems. In the event of system problems, 
+     this system can also be used to remotely control a wilderness weather system.
+   
+     Non-functional Requirements:
+     Data needs to be collected at frequent intervals. Software's user-interface needs to be fairly simple. Software needs to be developed 
+     in a way so that it can be easily updated or expanded.
+     
+     Constraints:
+     The Weather Stations will be deployed in rural areas where they will be exposed to harsh weather conditions. The Weather Station will
+     not have any expernal wiring. They will only communiate via satellite with a narrow bandwidth.
