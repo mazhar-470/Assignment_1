@@ -26,8 +26,61 @@ User Requirements Definition:
    
      Non-functional Requirements:
      Data needs to be collected at frequent intervals. Software's user-interface needs to be fairly simple. Software needs to be developed 
-     in a way so that it can be easily updated or expanded.
+     in a way so that it can be easily updated or expanded. Software should be able to monitor battery power status of the Weather
+     Stations and take pre-cautionary measures such as shut-down systems in terms of harsh weather conditions and power management. 
      
      Constraints:
      The Weather Stations will be deployed in rural areas where they will be exposed to harsh weather conditions. The Weather Station will
      not have any expernal wiring. They will only communiate via satellite with a narrow bandwidth.
+     
+System Requirement Specification:
+This section goes into details of the software requirements and how it should be operated.     
+     Functional Requirement for Weather Station:
+     Weather Station:
+     1.	Equipped with various sensors. Read wind speed and direction, temperatures, barometric pressure, rainfall over 24-hour period.
+     2.	Process the collected data and calculate average in every hour. 
+     3.	Generate a summary report with all the processed/calculated data. 
+     4.	Send the summary report to Data Collection Server over satellite connection after a certain period or on request from Data Collection System.
+     5.	Check and log battery status information in every hour.
+     6.	Run automatic testing across all sensors and instruments after a certain period (about an hour or so) and calculate efficiency.
+     7.	Log issues during test (failure of an instrument or sensor) and add the log to the system status report.
+     8.	Generate a system status report based on the test result.
+     9.	Send system status report to Station Maintenance Server over satellite connection. 
+     10.	Can receive system updates from System Maintenance Server.
+     11.	Can be remotely shut down, turned on or halted by Station Maintenance System.
+
+     Data Collection Station:
+     1.	Receives data from weather stations after a certain interval (an hour).
+     2.	Stores all the collected data in Data Collection Server.
+     3.	Can send request to weather stations to send weather reports.
+     4.	Analyze the collected data, summarize the data collected from all the weather stations.
+     5.	Create an area based weather report based on the summarized data from all the stations located in that area. 
+     6.	Collected data is archived and can be accessed by weather forecasting system through satellite. 
+     7.	Send the weather report to weather forecast system after certain intervals. 
+
+     Station Maintenance System:
+     1.	Collect System Status Reports from all weather stations and stores the data in Station Maintenance Server.
+     2.	Analyze the collected data and generate a report based on weather station issues such as equipment failures, battery health issues and weather system malfunctions. 
+     3.	Can push system updates to all or selected weather stations through Station Maintenance Server via satellite. 
+     4.	Can send commands remotely to weather stations that may result in shut down, turning on or operation halt of the weather station.
+     5.	Detect newly added or removed weather stations. 
+     6.	Can provide all the services above to newly added weather stations.
+     
+     Non-functional Requirements:
+     1. Software must be dynamically reconfigurable which means parts of the software can be updated to newer versions if the need
+        arises.
+     2. The user interface has to be simple but efficient.
+     3. The software must have a good response time and have recovery measures in case of system crash. 
+     4. The software should have user auhentication system and verification system of the user's identity.
+     5. The software should have a help section where the functionalities of the software and ways to operate the software are briefly
+        explained. 
+ 
+ System Models:
+ Refer to Figure 1.7 of the user specification document for system model.
+ 
+ System Evolution: 
+ The Wilderness Weather System is in its initial stage. It is highly likely that this system will be further expanded in the future.
+ The number of Weather Stations might increase or they could be equipped with better sensors to collect more data. The entire system 
+ could be expanded by adding more seperate systems. It is best to keep this in mind while developing the software.  
+
+
